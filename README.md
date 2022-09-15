@@ -3,6 +3,9 @@
 + pnpm install
 + pnpm run dev
 + http://127.0.0.1:5173/
+or
+ + docker-compose up --build client
+ + http://127.0.0.1:4000/
 
 
 # TODOLIST SERVER
@@ -20,4 +23,5 @@ const pool = new Pool({
 module.exports = pool;
 ```
 + pnpm run dev
+
 
