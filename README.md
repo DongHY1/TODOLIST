@@ -3,10 +3,6 @@
 + pnpm install
 + pnpm run dev
 + http://127.0.0.1:5173/
-or
- + docker-compose up --build client
- + http://127.0.0.1:4000/
-
 
 # TODOLIST SERVER
 + pnpm install
@@ -25,3 +21,6 @@ module.exports = pool;
 + pnpm run dev
 
 
+Recommend use：
+ + docker-compose up --build
+ + http://127.0.0.1:4000/
