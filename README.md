@@ -1,26 +1,18 @@
-# TODOLIST CLIENT
+# IN DEVELOPMENT
+## RUN YOUR POSTGREL
++ see setup.sql
+## RUN TODOLIST SERVER
++ pnpm install
++ pnpm run dev
+
+## RUN TODOLIST CLIENT
 
 + pnpm install
 + pnpm run dev
-+ http://127.0.0.1:5173/
 
-# TODOLIST SERVER
-+ pnpm install
-+ create your own db.js like 
-```
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user:"xxxx",
-  password:"xxxxx",
-  host:"localhost",
-  port:5432,
-  database:"xxxx"
-})
-module.exports = pool;
-```
-+ pnpm run dev
+OPEN http://127.0.0.1:5173/
 
 
-Recommend use：
+# Recommend:
  + docker-compose up --build
- + http://127.0.0.1:4000/
+ + http://127.0.0.1

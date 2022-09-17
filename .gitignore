@@ -1,5 +1,4 @@
 /server/node_modules
-/server/db.js
 /client/node_modules
 /client/dist
 
