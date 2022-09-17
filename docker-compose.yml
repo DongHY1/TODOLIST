@@ -1,29 +1,25 @@
-version: "3"
+version: '3'
 services:
   postgres:
-    image: postgres:14.1-alpine
+    image: 'haoyudong/postgres:latest'
     restart: always
     environment:
       - POSTGRES_PASSWORD=root
       - POSTGRES_USER=root
       - POSTGRES_DB=root
     ports:
-      - "5432:5432"
-    volumes: 
+      - '5432:5432'
+    volumes:
       - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
   server:
-    build:
-      context: ./server
-      dockerfile: Dockerfile  
-    depends_on: 
+    image: 'haoyudong/todo-example_server:latest'
+    depends_on:
       - postgres
     ports:
-      - "5001:5001"
+      - '5001:5001'
   client:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
+    image: 'haoyudong/todo-example_client:latest'
     ports:
-      - "80:80"
-    depends_on: 
+      - '80:80'
+    depends_on:
       - server
