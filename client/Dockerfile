@@ -1,5 +1,6 @@
 FROM node:14-alpine as builder
 
+
 WORKDIR /client
 RUN npm install -g pnpm
 # 单独分离 package.json，是为了安装依赖可最大限度利用缓存

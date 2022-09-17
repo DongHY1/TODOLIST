@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-
+import {BASE_URL} from '../config.js'
 export default function EditTodo({ id }) {
   const [desc, setDesc] = useState('');
   const handleEditClick = async () => {
     try {
       const body = { description: desc };
       debugger;
-      const res = await fetch(`http://localhost:5001/todos/${id}`, {
+      const res = await fetch(`http://${BASE_URL}/todos/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),

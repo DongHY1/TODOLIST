@@ -21,5 +21,7 @@ services:
     image: 'haoyudong/todo-example_client:latest'
     ports:
       - '80:80'
+    environment:
+      - BASE_URL=114.132.221.18:5001
     depends_on:
       - server
