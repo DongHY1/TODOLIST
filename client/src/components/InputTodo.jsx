@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import {BASE_URL} from '../config.js'
 export default function InputTodo() {
   const [desc, setDesc] = useState('');
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
       const body = { description: desc };
-      const res = await fetch(`http://${BASE_URL}/todos`, {
+      const res = await fetch(`http://${import.meta.env.VITE_BASE_URL}/todos`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),

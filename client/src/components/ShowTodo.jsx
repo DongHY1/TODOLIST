@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import EditTodo from './EditTodo';
-import {BASE_URL} from '../config.js'
 export default function ShowTodo() {
   const [list, setList] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
   const [id, setId] = useState('');
   const getList = async () => {
     try {
-      const res = await fetch(`http://${BASE_URL}/todos`, {
+      const res = await fetch(`http://${import.meta.env.VITE_BASE_URL}/todos`, {
         method: 'GET',
       });
       const data = await res.json();
@@ -22,7 +21,7 @@ export default function ShowTodo() {
   }, []);
   const removeTodo = async (id) => {
     try {
-      const res = await fetch(`http://${BASE_URL}/todos/${id}`, {
+      const res = await fetch(`http://${import.meta.env.VITE_BASE_URL}/todos/${id}`, {
         method: 'DELETE',
       });
       alert(res.statusText);
