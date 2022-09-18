@@ -5,7 +5,7 @@ export default function EditTodo({ id }) {
     try {
       const body = { description: desc };
       debugger;
-      const res = await fetch(`http://${import.meta.env.VITE_BASE_URL}/todos/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/todos/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),

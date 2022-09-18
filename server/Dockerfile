@@ -9,4 +9,4 @@ ADD . /server
 
 EXPOSE 5001
 
-CMD [ "npm", "run", "prod" ]
+CMD [ "npm", "run", "dev" ]

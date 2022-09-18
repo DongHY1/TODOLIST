@@ -5,7 +5,7 @@ export default function InputTodo() {
     e.preventDefault();
     try {
       const body = { description: desc };
-      const res = await fetch(`http://${import.meta.env.VITE_BASE_URL}/todos`, {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/todos`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
