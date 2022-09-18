@@ -6,7 +6,7 @@ export default function ShowTodo() {
   const [id, setId] = useState('');
   const getList = async () => {
     try {
-      const res = await fetch(`https://${import.meta.env.VITE_BASE_URL}/todos`, {
+      const res = await fetch(`/todos`, {
         method: 'GET',
       });
       const data = await res.json();
@@ -21,7 +21,7 @@ export default function ShowTodo() {
   }, []);
   const removeTodo = async (id) => {
     try {
-      const res = await fetch(`https://${import.meta.env.VITE_BASE_URL}/todos/${id}`, {
+      const res = await fetch(`/todos/${id}`, {
         method: 'DELETE',
       });
       alert(res.statusText);
