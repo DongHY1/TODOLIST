@@ -42,19 +42,19 @@ jobs:
         context: ./client
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo-example_client:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/todo-example_client:latest
 
     - name: Image digest
       run: echo ${{ steps.docker_build_client.outputs.digest }}
       
     - name: Build and push
       id: docker_build_server
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v3
       with:
         context: ./server
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo-example_server:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/todo-example_server:latest
 
     - name: Image digest
       run: echo ${{ steps.docker_build_server.outputs.digest }}
